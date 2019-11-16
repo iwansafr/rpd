@@ -60,5 +60,6 @@ $route['delete_jenis_kegiatan/(:any)'] = 'home/delete_jenis_kegiatan/$1';
 $route['detail_jenis_kegiatan/(:any)'] = 'home/detail_jenis_kegiatan/$1';
 $route['login'] = 'auth/index';
 $route['logout'] = 'auth/logout';
+$route['export_detail_kegiatan/(:any)'] = 'home/export_detail_kegiatan/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

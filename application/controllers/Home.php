@@ -1,5 +1,8 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+require('./application/third_party/phpoffice/vendor/autoload.php');
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Write\Xlsx;
 
 class Home extends CI_Controller {
 	public function __construct() {
@@ -121,6 +124,20 @@ class Home extends CI_Controller {
 			$this->load->view('templates/header', ['title' => $jenis_kegiatan['title']]);
 			$this->load->view('home/detail', ['jenis_kegiatan' => $jenis_kegiatan]);
 			$this->load->view('templates/footer');
+		} else {	
+			show_404();
+		}
+	}
+
+	public function export_detail_kegiatan($id) {
+		$list_kegiatan = $this->db->get_where('list_kegiatan', ['jenis_kegiatan_id' => $id])->result_array();
+		$jenis_kegiatan = $this->db->get_where('jenis_kegiatan', ['id' => $id])->row_array();
+		
+		if ($jenis_kegiatan) {
+			$this->load->view('home/export', [
+				'list_kegiatan'  => $list_kegiatan,
+				'jenis_kegiatan' => $jenis_kegiatan
+			]);
 		} else {	
 			show_404();
 		}
