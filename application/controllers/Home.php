@@ -142,4 +142,13 @@ class Home extends CI_Controller {
 			show_404();
 		}
 	}
+
+	public function export() {
+		$this->db->order_by('id', 'desc');
+		$jenis_kegiatan = $this->db->get('jenis_kegiatan')->result_array();
+
+		$this->load->view('home/export_all', [
+			'jenis_kegiatan' => $jenis_kegiatan
+		]);
+	}
 }

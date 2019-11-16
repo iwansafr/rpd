@@ -1,5 +1,5 @@
 <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-	<a href="" class="btn btn-success mb-3"><i class="fa fa-file-excel-o"></i> Ekspor excel</a>
+	<a href="<?php echo base_url('export_excel'); ?>" class="btn btn-success mb-3"><i class="fa fa-file-excel-o"></i> Ekspor excel</a>
 	<?php echo $this->session->flashdata('message'); ?>
 	<table class="table table-bordered">
 	  <thead>
