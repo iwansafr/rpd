@@ -42,7 +42,7 @@
 		    </tr>
 	  	<?php endforeach; ?>
 	  	<tr>
-	  		<td colspan="<?php if($this->session->has_userdata('user_id')) { echo '5'; } else { echo '3'; } ?>" class="text-center"><h5>Jumlah total</h5></td>
+	  		<td colspan="<?php if($this->session->has_userdata('user_id')) { echo '4'; } else { echo '3'; } ?>" class="text-center"><h5>Jumlah total</h5></td>
 	  		<td><strong>Rp <?php echo number_format($semua, 2, ',', '.'); ?></strong></td>
 	  	</tr>
 	  </tbody>

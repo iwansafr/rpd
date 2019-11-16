@@ -151,4 +151,33 @@ class Home extends CI_Controller {
 			'jenis_kegiatan' => $jenis_kegiatan
 		]);
 	}
+
+	public function edit_jenis_kegiatan($id) {
+		$jenis_kegiatan = $this->db->get_where('jenis_kegiatan', ['id' => $id])->row_array();
+
+		if ($jenis_kegiatan) {
+			$this->load->view('templates/header', ['title' => 'Edit : '.$jenis_kegiatan['title']]);
+			$this->load->view('home/edit', ['jenis_kegiatan' => $jenis_kegiatan]);
+			$this->load->view('templates/footer');
+		} else {	
+			show_404();
+		}
+	}
+
+	public function update_jenis_kegiatan($id) {
+		$this->form_validation->set_rules('title', '<strong>Jenis kegiatan</strong>', 'required');
+
+		if ($this->form_validation->run() === FALSE) {
+			$this->edit_jenis_kegiatan($id);
+		} else {
+			$this->db->where('id', $id);
+			$this->db->update('jenis_kegiatan', [
+				'title'       => htmlspecialchars($this->input->post('title')),
+				'description' => htmlspecialchars($this->input->post('description'))
+			]);
+
+			$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil diubah!</div>');
+			redirect();
+		}
+	}
 }
