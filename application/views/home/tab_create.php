@@ -6,7 +6,7 @@
 	  </div>
 
 	  <div class="form-group">
-	    <label for="deskripsi">Deskripsi (jika dibutuhkan)</label>
+	    <label for="deskripsi" style="margin-bottom: 10px;display: inline-block;">Deskripsi (jika dibutuhkan)</label>
 	    <textarea class="form-control" id="deskripsi" name="deskripsi">
 	    	<?php echo set_value('deskripsi'); ?>
 	    </textarea>
