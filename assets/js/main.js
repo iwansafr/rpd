@@ -1,7 +1,7 @@
 M.AutoInit();
 
 $(document).ready(function () {
-	$('#table-one').DataTable();
+	$('a[href="'+location.href+'"]').parents('li').addClass('active');
 
 	var localStorage = window.localStorage;
 	if (!localStorage.getItem('active')) {
