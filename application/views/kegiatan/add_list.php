@@ -2,7 +2,6 @@
   <div class="card-content grey lighten-5" style="overflow-x: auto;">
 	  <div class="view">
 	  	<?php echo $this->session->flashdata('message'); ?>
-			
 			<form action="<?php echo base_url('add_list_kegiatan'); ?>" method="POST">
 				<div class="form-group">
 			    <label for="jenis_kegiatan_id">Jenis kegiatan</label>
