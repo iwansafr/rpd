@@ -17,7 +17,9 @@
 				<table class="table table-bordered">
 				  <thead>
 				    <tr>
+				      <th scope="col">NO</th>
 				      <th scope="col">JENIS KEGIATAN</th>
+				      <th scope="col">BAHAN</th>
 				      <th scope="col">VOLUME</th>
 				      <th scope="col">SATUAN</th>
 				      <th scope="col">HARGA SATUAN</th>
@@ -26,24 +28,18 @@
 				  </thead>
 
 				  <tbody>
-				  	<tr>
-				  		<td colspan="5">
-				      	<h5><?php echo $jenis_kegiatan['title']; ?></h5>
-				  		</td>
-				  	</tr>
 
+				  	<?php $no = 1; ?>
       			<?php $detail_kegiatan = $this->db->get_where('detail_kegiatan', ['jenis_kegiatan_id' => $jenis_kegiatan['id']])->result_array(); ?>
 		      	<?php foreach($detail_kegiatan as $item) : ?>
 		      		<?php $this->db->where(['jenis_kegiatan_id' => $jenis_kegiatan['id'], 'detail_kegiatan_id' => $item['id']]); $list_kegiatan = $this->db->get('list_kegiatan')->result_array(); ?>
 
-					  	<tr>
-					  		<td style="background: #f2f2f2;" colspan="5">
-					      	<h6 class="pl-2"><?php echo $item['title']; ?></h6>
-					  		</td>
-					  	</tr>
-
 	      			<?php foreach($list_kegiatan as $key) : ?>
 						  	<tr>
+						  		<td><?php echo $no++; ?></td>
+						  		<td>
+						  			<h5><?php echo $jenis_kegiatan['title']; ?></h5>		
+						  		</td>
 		      				<td><?php echo $key['title']; ?></td>
 		      				<td><?php echo $key['volume']; ?></td>
 		      				<td><?php echo $key['satuan']; ?></td>
@@ -56,7 +52,7 @@
 		      	<?php $total = 0; foreach($this->db->get_where('list_kegiatan', ['jenis_kegiatan_id' => $jenis_kegiatan['id']])->result_array() as $key) { $total += $key['jumlah_biaya']; } ?>
 
       			<tr>
-      				<td class="text-center" colspan="4">
+      				<td class="text-center" colspan="6">
       					<strong>JUMLAH TOTAL</strong>
       				</td>
       				<td>

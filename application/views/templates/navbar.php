@@ -13,9 +13,6 @@
 	      </li>
 	      <?php if ($this->session->has_userdata('user_id')) : ?>
 		      <li class="nav-item">
-		        <a class="nav-link" href="<?php echo base_url('create_detail_kegiatan'); ?>">Tambah judul list</a>
-		      </li>
-		      <li class="nav-item">
 		        <a class="nav-link" href="<?php echo base_url('create_list_kegiatan'); ?>">Tambah list bahan</a>
 		      </li>
 		      <li class="nav-item">
