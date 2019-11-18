@@ -20,3 +20,4 @@
 	
   <div class="wrapper">
     <?php $this->load->view('templates/navbar'); ?>
+    <br />

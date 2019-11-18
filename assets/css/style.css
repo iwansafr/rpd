@@ -25,3 +25,9 @@
 	background: #ffffff;
 	z-index: 9999;
 }
+.table-wrapper {
+	overflow-x: auto;
+}
+table .btn {
+	margin: 10px 10px 10px 0;
+}
