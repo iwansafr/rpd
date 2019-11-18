@@ -1,4 +1,17 @@
-<div class="card">
+<div class="card teal">
+  <div class="card-tabs">
+    <ul class="tabs tabs-fixed-width tabs-transparent">
+      <li class="tab"><a href="#view">Test 1</a></li>
+      <li class="tab"><a href="#test5">Test 2</a></li>
+    </ul>
+  </div>
+  <div class="card-content grey lighten-5">
+    <div id="view">Test 1</div>
+    <div id="test5">Test 2</div>
+  </div>
+</div>
+
+<!-- <div class="card">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
 		  <li class="nav-item">
@@ -17,4 +30,4 @@
 		  <?php $this->load->view('home/tab_create'); ?>
 		</div>
   </div>
-</div>
+</div> -->
