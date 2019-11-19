@@ -57,3 +57,7 @@ table .btn {
 	border: none;
 	cursor: pointer;
 }
+.invalid-feedback, .text-danger {
+	color: #d32f2f !important;
+	font-size: 14px;
+}
