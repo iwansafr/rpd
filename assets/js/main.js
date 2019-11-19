@@ -1,33 +1,17 @@
+// materialize init
 M.AutoInit();
 
 $(document).ready(function () {
+	// set parent class active when is current link
 	$('a[href="'+location.href+'"]').parents('li').addClass('active');
 
-	var localStorage = window.localStorage;
-	if (!localStorage.getItem('active')) {
-		localStorage.setItem('active', 'view');
-	}
-
-	$('.tab').children('a[href="#'+localStorage.getItem('active')+'"]').addClass('active');
-
+	// set timeout for prereload page
 	setTimeout(function() {
 		$('.prereload').fadeOut();
 	}, 100);
 });
 
+// collapse for mobile sidebar
 $(document).ready(function(){
   $('.sidenav').sidenav();
-});
-
-$('.tab').on('click', function(e) {
-	let localStorage = window.localStorage;
-	let item = $(this).attr('class');
-
-	$('.tab').removeClass('active');
-	$(this).addClass('active');
-	localStorage.setItem('active', $(this).children('a').attr('href').substring(1));
-});
-
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
 });
