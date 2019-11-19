@@ -9,6 +9,10 @@ $(document).ready(function () {
 	setTimeout(function() {
 		$('.prereload').fadeOut();
 	}, 100);
+
+	// add class waves effect to all button
+	$('.btn').addClass('waves-effect');
+	$('.btn').addClass('waves-light');
 });
 
 // collapse for mobile sidebar
@@ -20,7 +24,8 @@ const alert = () => {
 	let alert = document.querySelector('.alert');
 	let button = document.createElement('button');
 
-	button.setAttribute('class', 'close-alert');
+	button.setAttribute('class', 'waves-effect waves-light close-alert');
+	button.setAttribute('type', 'button');
 	button.innerHTML = '&times;';
 	alert.appendChild(button);
 }

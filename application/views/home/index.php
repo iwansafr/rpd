@@ -7,6 +7,7 @@
       <?php endif; ?>
     </ul>
   </div>
+
   <div class="card-content grey lighten-5">
     <div id="view">
     	<?php $this->load->view('home/tab_table'); ?>

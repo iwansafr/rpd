@@ -70,18 +70,27 @@
     <form class="form-signin" action="<?php echo base_url('auth/login'); ?>" method="POST">
 		  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 		  <?php echo $this->session->flashdata('message'); ?>
-		  <label for="inputEmail" class="sr-only">Email address</label>
-		  <input type="text" name="username" id="inputEmail" class="form-control <?php echo form_error('username') ? 'is-invalid' : '' ?>" placeholder="Username" autofocus>
-		  <?php echo form_error('username', '<small class="invalid-feedback mb-1">', '</small>'); ?>
-		  <label for="inputPassword" class="sr-only">Password</label>
-		  <input type="password" name="password" id="inputPassword" class="form-control <?php echo form_error('password') ? 'is-invalid' : '' ?>" placeholder="Password">
-		  <?php echo form_error('login', '<small class="invalid-feedback mb-1">', '</small>'); ?>
-		  <div class="checkbox mb-3">
-		    <label>
-		      <input type="checkbox" value="remember-me"> Remember me
-		    </label>
+
+		  <div class="input-field">
+			  <input type="text" name="username" id="inputEmail" class="form-control <?php echo form_error('username') ? 'is-invalid' : '' ?>" placeholder="Username" autofocus>
+			  <?php echo form_error('username', '<small class="invalid-feedback mb-1">', '</small>'); ?>
+			  <label for="inputEmail">Email address</label>
 		  </div>
-		  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+		  <div class="input-field">
+			  <input type="password" name="password" id="inputPassword" class="form-control <?php echo form_error('password') ? 'is-invalid' : '' ?>" placeholder="Password">
+			  <label for="inputPassword">Password</label>
+			  <?php echo form_error('login', '<small class="invalid-feedback mb-1">', '</small>'); ?>
+		  </div>
+
+		  <p>
+		    <label>
+		      <input type="checkbox" class="filled-in">
+		      <span>Remember me</span>
+		    </label>
+		  </p>
+
+		  <button class="btn waves-effect waves-light blue" type="submit">Sign in</button>
 		  <p class="mt-5 mb-3 text-muted">&copy; 2019-2019</p>
 		</form>
 <?php $this->load->view('templates/script'); ?>
