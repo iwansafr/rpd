@@ -12,6 +12,25 @@ $(document).ready(function () {
 });
 
 // collapse for mobile sidebar
-$(document).ready(function(){
+$(document).ready(function() {
   $('.sidenav').sidenav();
+});
+
+const alert = () => {
+	let alert = document.querySelector('.alert');
+	let button = document.createElement('button');
+
+	button.setAttribute('class', 'close-alert');
+	button.innerHTML = '&times;';
+	alert.appendChild(button);
+}
+
+// make close button for alert
+if (document.querySelector('.alert')) {
+	alert();
+}
+
+$('.close-alert').on('click', function() {
+	let parents = $(this).parents('.alert');
+	parents.hide();
 });
