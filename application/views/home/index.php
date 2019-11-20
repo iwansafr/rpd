@@ -12,8 +12,10 @@
     <div id="view">
     	<?php $this->load->view('home/tab_table'); ?>
     </div>
-    <div id="create">
-    	<?php $this->load->view('home/tab_create'); ?>
-    </div>
+    <?php if ($this->session->has_userdata('user_id')) : ?>
+	    <div id="create">
+	    	<?php $this->load->view('home/tab_create'); ?>
+	    </div>
+	  <?php endif; ?>
   </div>
 </div>

@@ -1,8 +1,4 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-require('./application/third_party/phpoffice/vendor/autoload.php');
-
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Write\Xlsx;
 
 class Home extends CI_Controller {
 	public function __construct() {

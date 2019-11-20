@@ -8,6 +8,9 @@
 		  <thead>
 		    <tr>
 		      <th scope="col">NO</th>
+		      <?php if ($this->session->userdata('user_id')) : ?>
+		      	<th scope="col">ACTION</th>
+		      <?php endif; ?>
 		      <th scope="col">JENIS KEGIATAN</th>
 		      <th scope="col">BAHAN</th>
 		      <th scope="col">VOLUME</th>
@@ -26,6 +29,12 @@
     			<?php foreach($list_kegiatan as $key) : ?>
 				  	<tr>
 				  		<td><?php echo $no++; ?></td>
+				  		<?php if ($this->session->userdata('user_id')) : ?>
+					  		<td>
+					  			<a data-tooltip="tooltip" class="btn blue" href="<?php echo base_url('list/'.$key['id'].'/edit'); ?>"><i class="fa fa-edit"></i></a>
+				      		<a data-tooltip="tooltip" class="btn red" href="<?php echo base_url('list/'.$key['id'].'/destroy'); ?>" onclick="return window.confirm('Yakin mau dihapus?');"><i class="fa fa-trash"></i></a>
+					  		</td>
+					  	<?php endif; ?>
 				  		<td>
 				  			<h5><?php echo $jenis_kegiatan['title']; ?></h5>		
 				  		</td>
