@@ -61,3 +61,6 @@ table .btn {
 	color: #d32f2f !important;
 	font-size: 14px;
 }
+tr, td, th {
+	border: 1px splid #88888 !important;
+}

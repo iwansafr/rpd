@@ -1,5 +1,5 @@
 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-	<form action="<?php echo base_url('add_jenis_kegiatan'); ?>" method="POST">
+	<form action="<?php echo base_url('kegiatan/store'); ?>" method="POST">
 	  <div class="input-field">
 	    <input type="text" name="title" class="validate <?php echo form_error('title') ? 'is-invalid' : ''; ?>" id="jenis-kegiatan" value="<?php echo set_value('title'); ?>" required>
 	    <label for="jenis-kegiatan">Jenis kegiatan</label>

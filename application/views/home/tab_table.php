@@ -32,8 +32,8 @@
 		      <td scope="row"><?php echo $i++; ?></td>
 		      <?php if ($this->session->has_userdata('user_id')) : ?>
 			      <td>
-			      	<a data-tooltip="tooltip" class="btn blue" href="<?php echo base_url('edit_jenis_kegiatan/'.$item['id']); ?>"><i class="fa fa-edit"></i></a>
-			      	<a data-tooltip="tooltip" class="btn red" href="<?php echo base_url('delete_jenis_kegiatan/'.$item['id']); ?>" onclick="return window.confirm('Yakin mau dihapus?');"><i class="fa fa-trash"></i></a>
+			      	<a data-tooltip="tooltip" class="btn blue" href="<?php echo base_url('kegiatan/'.$item['id'].'/edit'); ?>"><i class="fa fa-edit"></i></a>
+			      	<a data-tooltip="tooltip" class="btn red" href="<?php echo base_url('kegiatan/'.$item['id'].'/destroy'); ?>" onclick="return window.confirm('Yakin mau dihapus?');"><i class="fa fa-trash"></i></a>
 			      </td>
 			    <?php endif; ?>
 		      <td><a href="<?php echo base_url('detail_jenis_kegiatan/'.$item['id']); ?>"><i class="fa fa-external-link"></i> Detail</a></td>

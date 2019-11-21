@@ -2,7 +2,7 @@
   <div class="card-content grey lighten-5" style="overflow-x: auto;">
 	  <div class="view">
 	  	<?php echo $this->session->flashdata('message'); ?>
-			<form action="<?php echo base_url('add_list_kegiatan'); ?>" method="POST">
+			<form action="<?php echo base_url('list/store'); ?>" method="POST">
 				<div class="input-field">
 			    <select class="form-control" name="jenis_kegiatan_id" id="jenis_kegiatan_id">
 			    	<?php foreach($jenis_kegiatan as $item) : ?>
@@ -10,15 +10,6 @@
 			    	<?php endforeach; ?>
 			    </select>
 			    <label for="jenis_kegiatan_id">Jenis kegiatan</label>
-			  </div>
-
-			  <div class="input-field">
-			    <select class="form-control" name="detail_kegiatan_id" id="detail_kegiatan_id">
-			    	<?php foreach($detail_kegiatan as $item) : ?>
-			    		<option value="<?php echo $item['id']; ?>"><?php echo $item['title']; ?></option>
-			    	<?php endforeach; ?>
-			    </select>
-			    <label for="detail_kegiatan_id">Judul anggaran</label>
 			  </div>
 
 			  <div class="input-field">

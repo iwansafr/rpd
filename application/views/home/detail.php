@@ -36,7 +36,7 @@
 					  		</td>
 					  	<?php endif; ?>
 				  		<td>
-				  			<h5><?php echo $jenis_kegiatan['title']; ?></h5>		
+				  			<h6><?php echo $jenis_kegiatan['title']; ?></h6>		
 				  		</td>
       				<td><?php echo $key['title']; ?></td>
       				<td><?php echo $key['volume']; ?></td>
@@ -50,7 +50,7 @@
       	<?php $total = 0; foreach($this->db->get_where('list_kegiatan', ['jenis_kegiatan_id' => $jenis_kegiatan['id']])->result_array() as $key) { $total += $key['jumlah_biaya']; } ?>
 
   			<tr>
-  				<td class="text-center" colspan="6">
+  				<td class="text-center" colspan="<?php echo $this->session->userdata('user_id') ? '7' : '6'; ?>">
   					<strong>JUMLAH TOTAL</strong>
   				</td>
   				<td>

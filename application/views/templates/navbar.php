@@ -8,7 +8,6 @@
 	      <li class="waves-effect waves-light"><a href="<?php echo base_url('home'); ?>"><i class="fa fa-home"></i> Beranda</a></li>
 	      <?php if ($this->session->has_userdata('user_id')) : ?>
 	      	<li class="waves-effect waves-light"><a href="<?php echo base_url('create_list_kegiatan'); ?>"><i class="fa fa-pencil"></i> Create list kegiatan</a></li>
-	      	<li class="waves-effect waves-light"><a href="<?php echo base_url('create_detail_kegiatan'); ?>"><i class="fa fa-pencil"></i> Judul kegiatan</a></li>
 	      	<li class="waves-effect waves-light"><a href="<?php echo base_url('logout'); ?>"><i class="fa fa-sign-out"></i> Logout</a></li>
 				<?php else : ?>
 					<li class="waves-effect waves-light"><a href="<?php echo base_url('login'); ?>"><i class="fa fa-sign-in"></i> Login</a></li>	      	

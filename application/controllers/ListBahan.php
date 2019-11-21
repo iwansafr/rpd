@@ -66,4 +66,43 @@ class ListBahan extends CI_Controller {
 			show_404();
 		}
 	}
+
+	public function create() {
+		$data = $this->db->get('jenis_kegiatan')->result_array();
+		if (count($data) < 1) {
+			$this->session->set_flashdata('message', '<div class="alert alert-danger">Maaf anda belum mengisi jenis kegiatan!</div>');
+			redirect();
+			die;
+		}
+
+		$this->db->order_by('id', 'desc');
+		$jenis_kegiatan = $this->db->get('jenis_kegiatan')->result_array();
+		$this->load->view('templates/header', ['title' => 'List detail kegiatan']);
+		$this->load->view('kegiatan/add_list', ['jenis_kegiatan' => $jenis_kegiatan]);
+		$this->load->view('templates/footer');
+	}
+
+	public function store() {
+		$this->form_validation->set_rules('title', '<strong>title</strong>', 'required');
+		$this->form_validation->set_rules('volume', '<strong>volume</strong>', 'required');
+		$this->form_validation->set_rules('satuan', '<strong>satuan</strong>', 'required');
+		$this->form_validation->set_rules('harga_satuan', '<strong>jumlah_satuan</strong>', 'required');
+
+		if ($this->form_validation->run() === FALSE) {
+			$this->create_list_kegiatan();
+		} else {
+			$this->db->insert('list_kegiatan', [
+				'title'              => htmlspecialchars($this->input->post('title')),
+				'jenis_kegiatan_id'  => $this->input->post('jenis_kegiatan_id'),
+				'detail_kegiatan_id' => 0,
+				'volume'             => htmlspecialchars($this->input->post('volume')),
+				'satuan'             => htmlspecialchars($this->input->post('satuan')),
+				'harga_satuan'       => htmlspecialchars($this->input->post('harga_satuan')),
+				'jumlah_biaya'       => $this->input->post('volume') * $this->input->post('harga_satuan')
+			]);
+
+			$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil disimpan!. Jika ingin menambah list bahan tinggal tambah dengan menyesuaikan judul dan detail judul.</div>');
+			redirect($this->agent->referrer());
+		}
+	}
 }
