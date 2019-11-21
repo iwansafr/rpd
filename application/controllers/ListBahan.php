@@ -101,7 +101,7 @@ class ListBahan extends CI_Controller {
 				'jumlah_biaya'       => $this->input->post('volume') * $this->input->post('harga_satuan')
 			]);
 
-			$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil disimpan!. Jika ingin menambah list bahan tinggal tambah dengan menyesuaikan judul dan detail judul.</div>');
+			$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil disimpan!.<a href="'.base_url().'" style="text-decoration: underline;color: blue;">Kembali</a></div>');
 			redirect($this->agent->referrer());
 		}
 	}
