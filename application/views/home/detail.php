@@ -54,7 +54,6 @@
   					<strong>Rp <?php echo number_format($total, 2, ',', '.'); ?></strong>
   				</td>
   			</tr>
-
 		  </tbody>
 		</table>
 	</div>

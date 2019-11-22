@@ -89,7 +89,7 @@ class ListBahan extends CI_Controller {
 		$this->form_validation->set_rules('harga_satuan', '<strong>jumlah_satuan</strong>', 'required');
 
 		if ($this->form_validation->run() === FALSE) {
-			$this->create_list_kegiatan();
+			$this->create();
 		} else {
 			$this->db->insert('list_kegiatan', [
 				'title'              => htmlspecialchars($this->input->post('title')),
