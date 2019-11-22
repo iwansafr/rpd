@@ -21,8 +21,8 @@ class Kegiatan extends CI_Controller {
 		$kegiatan = $this->db->get_where('jenis_kegiatan', ['id' => $id])->row_array();
 
 		if ($kegiatan) {
-			$this->load->view('templates/header', ['title' => 'Edit : '.$jenis_kegiatan['title']]);
-			$this->load->view('home/edit', ['jenis_kegiatan' => $jenis_kegiatan]);
+			$this->load->view('templates/header', ['title' => 'Edit : '.$kegiatan['title']]);
+			$this->load->view('home/edit', ['jenis_kegiatan' => $kegiatan]);
 			$this->load->view('templates/footer');
 		} else {
 			show_404();

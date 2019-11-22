@@ -37,7 +37,10 @@
 			      </td>
 			    <?php endif; ?>
 		      <td><a href="<?php echo base_url('kegiatan/'.$item['id'].'/detail'); ?>"><i class="fa fa-external-link"></i> Detail</a></td>
-		      <td><h6 style="font-weight: bold;"><?php echo $item['title']; ?></h6></td>
+		      <td>
+		      	<h6 style="font-weight: bold;"><?php echo $item['title']; ?></h6>
+		      	<p><?php echo $item['description']; ?></p>
+		      </td>
 		      <td><strong>Rp <?php echo number_format($jumlah, 2, ',', '.'); ?></strong></td>
 		    </tr>
 	  	<?php endforeach; ?>
