@@ -58,6 +58,17 @@ class Kegiatan extends CI_Controller {
 			redirect();
 		}
 	}
+
+	public function detail($id) {
+		$jenis_kegiatan = $this->db->get_where('jenis_kegiatan', ['id' => $id])->row_array();
+		if ($jenis_kegiatan) {
+			$this->load->view('templates/header', ['title' => $jenis_kegiatan['title']]);
+			$this->load->view('home/detail', ['jenis_kegiatan' => $jenis_kegiatan]);
+			$this->load->view('templates/footer');
+		} else {	
+			show_404();
+		}
+	}
 }
 
 

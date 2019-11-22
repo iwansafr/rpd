@@ -51,11 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'home';
 $route['home'] = 'Home/index';
-$route['create_detail_kegiatan'] = 'home/create_detail_kegiatan';
-$route['add_detail_kegiatan'] = 'home/add_detail_kegiatan';
-$route['add_list_kegiatan'] = 'home/add_list_kegiatan';
-$route['home/(:any)/destroy'] = 'home/destroy/$1';
-$route['detail_jenis_kegiatan/(:any)'] = 'home/detail_jenis_kegiatan/$1';
+$route['kegiatan/(:any)/destroy'] = 'kegiatan/destroy/$1';
+$route['kegiatan/(:any)/detail'] = 'kegiatan/detail/$1';
 $route['kegiatan/(:any)/edit'] = 'home/edit/$1';
 $route['login'] = 'auth/index';
 $route['logout'] = 'auth/logout';

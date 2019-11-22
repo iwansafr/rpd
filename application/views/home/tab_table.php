@@ -36,7 +36,7 @@
 			      	<a data-tooltip="tooltip" class="btn red" href="<?php echo base_url('kegiatan/'.$item['id'].'/destroy'); ?>" onclick="return window.confirm('Yakin mau dihapus?');"><i class="fa fa-trash"></i></a>
 			      </td>
 			    <?php endif; ?>
-		      <td><a href="<?php echo base_url('detail_jenis_kegiatan/'.$item['id']); ?>"><i class="fa fa-external-link"></i> Detail</a></td>
+		      <td><a href="<?php echo base_url('kegiatan/'.$item['id'].'/detail'); ?>"><i class="fa fa-external-link"></i> Detail</a></td>
 		      <td><h6 style="font-weight: bold;"><?php echo $item['title']; ?></h6></td>
 		      <td><strong>Rp <?php echo number_format($jumlah, 2, ',', '.'); ?></strong></td>
 		    </tr>

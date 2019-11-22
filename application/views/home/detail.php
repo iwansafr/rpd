@@ -22,9 +22,7 @@
 
 		  <tbody>
 		  	<?php $no = 1; ?>
-  			<?php $detail_kegiatan = $this->db->get_where('detail_kegiatan', ['jenis_kegiatan_id' => $jenis_kegiatan['id']])->result_array(); ?>
-      	<?php foreach($detail_kegiatan as $item) : ?>
-      		<?php $this->db->where(['jenis_kegiatan_id' => $jenis_kegiatan['id'], 'detail_kegiatan_id' => $item['id']]); $list_kegiatan = $this->db->get('list_kegiatan')->result_array(); ?>
+      		<?php $this->db->where(['jenis_kegiatan_id' => $jenis_kegiatan['id']]); $list_kegiatan = $this->db->get('list_kegiatan')->result_array(); ?>
 
     			<?php foreach($list_kegiatan as $key) : ?>
 				  	<tr>
@@ -46,7 +44,6 @@
 				  	</tr>
     			<?php endforeach; ?>
 
-      	<?php endforeach; ?>
       	<?php $total = 0; foreach($this->db->get_where('list_kegiatan', ['jenis_kegiatan_id' => $jenis_kegiatan['id']])->result_array() as $key) { $total += $key['jumlah_biaya']; } ?>
 
   			<tr>
