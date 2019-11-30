@@ -4,10 +4,9 @@ class ListBahan extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 
-		if (!$this->session->userdata('user_id')) {
-			show_404();
+		if (!$this->session->has_userdata('user_id')) {
+			redirect('login');
 		}
-
 		$this->load->library('form_validation');
 	}
 

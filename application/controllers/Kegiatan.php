@@ -3,7 +3,9 @@
 class Kegiatan extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
-
+		if (!$this->session->has_userdata('user_id')) {
+			redirect('login');
+		}
 		$this->load->library('form_validation');
 	}
 
