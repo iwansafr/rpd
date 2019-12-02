@@ -7,13 +7,14 @@ class Home extends CI_Controller {
 		if (!$this->session->has_userdata('user_id')) {
 			redirect('login');
 		}
+		$this->load->model('Kegiatan');
 	}
 
 	public function index() {
-		$this->db->order_by('id', 'desc');
-		$jenis_kegiatan = $this->db->get('jenis_kegiatan')->result_array();
+		$kegiatan = $this->Kegiatan->all();
+
 		$this->load->view('templates/header', ['title' => 'Welcome user!']);
-		$this->load->view('home/index', ['jenis_kegiatan' => $jenis_kegiatan]);
+		$this->load->view('home/index', ['kegiatan' => $kegiatan]);
 		$this->load->view('templates/footer');
 	}
 

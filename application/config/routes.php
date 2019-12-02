@@ -6,6 +6,7 @@ $route['home'] = 'Home/index';
 $route['kegiatan/(:any)/destroy'] = 'kegiatan/destroy/$1';
 $route['kegiatan/(:any)/detail'] = 'kegiatan/detail/$1';
 $route['kegiatan/(:any)/edit'] = 'kegiatan/edit/$1';
+$route['kegiatan/(:any)/update'] = 'kegiatan/update/$1';
 $route['login'] = 'auth/index';
 $route['logout'] = 'auth/logout';
 $route['export_detail_kegiatan/(:any)'] = 'home/export_detail_kegiatan/$1';

@@ -17,8 +17,7 @@
         <a class="btn btn-primary" href="<?php echo base_url('kegiatan/create'); ?>">
           <i class="fa fa-plus"></i>
         </a>
-      </div>
-      <!-- /.box-header -->
+
       <div class="box-body">
         <table id="kegiatan" class="table table-bordered table-striped">
           <thead>
@@ -34,6 +33,7 @@
           <tbody>
           <?php $i = 1; ?>
           <?php foreach($data as $key) : ?>
+            <?php $detail_kegiatan = $this->db->get_where('detail_kegiatan', ['jenis_kegiatan_id' => $key['id']])->row_array(); ?>
             <tr>
               <td><?php echo $i++; ?></td>
               <td>
@@ -41,20 +41,25 @@
                   <i class="fa fa-edit"></i>
                 </a>
               </td>
+
               <td>
                 <a onclick="return window.confirm('Mau dihapus?')" href="<?php echo base_url('kegiatan/'.$key['id'].'/destroy'); ?>" class="btn btn-danger">
                   <i class="fa fa-trash"></i>
                 </a>
               </td>
+
               <td>
                 <a href="<?php echo base_url('kegiatan/'.$key['id'].'/detail'); ?>">Detail</a>
               </td>
+
               <td>
                 <?php echo $key['title']; ?>
               </td>
+
               <td>
                 <?php echo 'jumlah'; ?>
               </td>
+
             </tr>
           <?php endforeach; ?>
           </tbody>
