@@ -1,58 +1,39 @@
-<?php $user = $this->db->get_where('users', ['id' => $this->session->userdata('user_id')])->row_array(); ?>
-<nav class="blue">
-	<div class="container">
-	  <div class="nav-wrapper">
-	    <a href="<?php echo base_url(); ?>" class="brand-logo">Logo</a>
-	    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-bars"></i></a>
-	    <ul class="right hide-on-med-and-down">
-	      <li class="waves-effect waves-light">
-	      	<a href="<?php echo base_url('home'); ?>">
-	      		<i class="fa fa-home"></i> Beranda
-	      	</a>
-	      </li>
+<?php $user = $this->db->get_where('users', ['id' => $this->session->userdata['user_id']])->row_array(); ?>
+<header class="main-header">
+  <!-- Logo -->
+  <a href="<?php echo base_url(); ?>" class="logo">
+    <span class="logo-mini"><b>A</b>LT</span>
+    <span class="logo-lg"><b>Admin</b>LTE</span>
+  </a>
 
-      	<li class="waves-effect waves-light">
-      		<a href="<?php echo base_url('list/create'); ?>">
-      			<i class="fa fa-pencil"></i> Create list kegiatan
-      		</a>
-      	</li>
+  <!-- Header Navbar -->
+  <nav class="navbar navbar-static-top" role="navigation">
+    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"></a>
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <li class="dropdown user user-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="<?php echo base_url('assets/'); ?>img/user2-160x160.jpg" class="user-image" alt="User Image">
+            <span class="hidden-xs"><?php echo $user['username']; ?></span>
+          </a>
 
-      	<li class="waves-effect waves-light">
-      		<a href="<?php echo base_url('logout'); ?>">
-      			<i class="fa fa-sign-out"></i> Logout
-      		</a>
-      	</li>
-	    </ul>
-	  </div>
-	</div>
-</nav>
+          <ul class="dropdown-menu">
+            <li class="user-header">
+              <img src="<?php echo base_url('assets/'); ?>img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <p>
+                <?php echo $user['username']; ?> - Administrator
+                <small>Member since <?php echo date('M. Y', strtotime($user['created_at'])); ?></small>
+              </p>
+            </li>
 
-<ul class="sidenav" id="mobile-demo">
-  <li class="waves-effect waves-light">
-  	<a href="<?php echo base_url(); ?>">\
-  		<i class="fa fa-home"></i> Beranda
-  	</a>
-  </li>
-
-	<li class="waves-effect waves-light">
-		<a href="<?php echo base_url('create_list_kegiatan'); ?>">
-			<i class="fa fa-pencil"></i> Create list kegiatan
-		</a>
-	</li>
-
-  <li class="waves-effect waves-light">
-  	<a href="<?php echo base_url('create_detail_kegiatan'); ?>">
-  		<i class="fa fa-pencil"></i> Judul kegiatan
-  	</a>
-  </li>
-  
-	<li class="waves-effect waves-light">
-		<a href="<?php echo base_url('logout'); ?>">
-			<i class="fa fa-sign-out"></i> Logout
-		</a>
-	</li>
-</ul>
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
+            <li class="user-footer">
+              <div class="pull-right">
+                <a href="<?php echo base_url('logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
