@@ -16,8 +16,16 @@
       <li>
         <a href="<?php echo base_url('home'); ?>"><i class="fa fa-home"></i> <span>Beranda</span></a>
       </li>
-      <li>
-        <a href="#"><i class="fa fa-link"></i> <span>Kegiatan</span></a>
+      <li class="treeview">
+        <a href="javascript:void(0)"><i class="fa fa-wrench"></i> <span>Kegiatan</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo base_url('kegiatan'); ?>"><i class="fa fa-circle-o"></i> List kegiatan</a></li>
+          <li><a href="<?php echo base_url('kegiatan/create'); ?>"><i class="fa fa-circle-o"></i> Tambah kegiatan</a></li>
+        </ul>
       </li>
     </ul>
   </section>

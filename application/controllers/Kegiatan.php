@@ -9,6 +9,21 @@ class Kegiatan extends CI_Controller {
 		$this->load->library('form_validation');
 	}
 
+	public function index() {
+		$this->db->order_by('id', 'desc');
+		$data = $this->db->get('jenis_kegiatan')->result_array();
+
+		$this->load->view('templates/header', ['title' => 'List data kegiatan']);
+		$this->load->view('kegiatan/index', ['data' => $data]);
+		$this->load->view('templates/footer');
+	}
+
+	public function create() {
+		$this->load->view('templates/header', ['title' => 'Tambah kegiatan']);
+		$this->load->view('kegiatan/create');
+		$this->load->view('templates/footer');
+	}
+
 	public function store() {
 		$this->db->insert('jenis_kegiatan', [
 				'title'       => htmlspecialchars($this->input->post('title')),
@@ -16,7 +31,7 @@ class Kegiatan extends CI_Controller {
 		]);
 
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil ditambah!</div>');
-		redirect('list/create');
+		redirect($this->agent->referrer());
 	}
 
 	public function edit($id) {
@@ -41,7 +56,7 @@ class Kegiatan extends CI_Controller {
 
 		$this->db->delete('jenis_kegiatan', ['id' => $id]);
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil dihapus!</div>');
-		redirect();
+		redirect($this->agent->referrer());
 	}
 
 	public function update($id) {

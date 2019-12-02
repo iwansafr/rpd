@@ -1,7 +1,7 @@
 <?php $user = $this->db->get_where('users', ['id' => $this->session->userdata['user_id']])->row_array(); ?>
 <header class="main-header">
   <!-- Logo -->
-  <a href="<?php echo base_url(); ?>" class="logo">
+  <a href="<?php echo base_url('home'); ?>" class="logo">
     <span class="logo-mini"><b>A</b>LT</span>
     <span class="logo-lg"><b>Admin</b>LTE</span>
   </a>
