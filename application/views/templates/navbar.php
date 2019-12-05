@@ -2,8 +2,8 @@
 <header class="main-header">
   <!-- Logo -->
   <a href="<?php echo base_url('home'); ?>" class="logo">
-    <span class="logo-mini"><img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="logo" width="40" /></span>
-    <span class="logo-lg"><img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="logo" width="60" /></span>
+    <span class="logo-mini">RPD</span>
+    <span class="logo-lg">RPD</span>
   </a>
 
   <!-- Header Navbar -->

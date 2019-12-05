@@ -18,7 +18,7 @@
               <p>Kegiatan</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="fa fa-wrench"></i>
             </div>
             <a href="<?php echo base_url('kegiatan'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -32,7 +32,7 @@
               <p>Pemasukan</p>
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+              <i class="fa fa-bar-chart"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -43,10 +43,10 @@
             <div class="inner">
               <h3>0</h3>
 
-              <p>Penegeluaran</p>
+              <p>Pengeluaran</p>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="fa fa-bar-chart"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>

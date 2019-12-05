@@ -1,8 +1,8 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Kegiatan extends CI_Model
+class Anggaran extends CI_Model
 {
-	private $table = 'jenis_kegiatan';
+	private $table = 'anggaran';
 	public $data;
 
 	public function __construct()

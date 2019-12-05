@@ -11,7 +11,7 @@ class Kegiatan extends CI_Controller {
 
 	public function index() {
 		$this->db->order_by('id', 'desc');
-		$data = $this->db->get('jenis_kegiatan')->result_array();
+		$data = $this->db->get('anggaran')->result_array();
 
 		$this->load->view('templates/header', ['title' => 'List data kegiatan']);
 		$this->load->view('kegiatan/index', ['data' => $data]);

@@ -27,6 +27,12 @@
           <li><a href="<?php echo base_url('kegiatan/create'); ?>"><i class="fa fa-circle-o"></i> Tambah kegiatan</a></li>
         </ul>
       </li>
+      <li>
+        <a href="<?php echo base_url('pemasukan'); ?>"><i class="fa fa-bar-chart"></i> <span>Pemasukan</span></a>
+      </li>
+      <li>
+        <a href="<?php echo base_url('pengeluaran'); ?>"><i class="fa fa-bar-chart"></i> <span>Pengeluaran</span></a>
+      </li>
     </ul>
   </section>
 </aside>

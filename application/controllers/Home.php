@@ -7,11 +7,11 @@ class Home extends CI_Controller {
 		if (!$this->session->has_userdata('user_id')) {
 			redirect('login');
 		}
-		$this->load->model('Kegiatan');
+		$this->load->model('Anggaran');
 	}
 
 	public function index() {
-		$kegiatan = $this->Kegiatan->all();
+		$kegiatan = $this->Anggaran->all();
 
 		$this->load->view('templates/header', ['title' => 'Welcome user!']);
 		$this->load->view('home/index', ['kegiatan' => $kegiatan]);
@@ -24,7 +24,7 @@ class Home extends CI_Controller {
 			$this->load->view('templates/header', ['title' => $jenis_kegiatan['title']]);
 			$this->load->view('home/detail', ['jenis_kegiatan' => $jenis_kegiatan]);
 			$this->load->view('templates/footer');
-		} else {	
+		} else {
 			show_404();
 		}
 	}
@@ -32,13 +32,13 @@ class Home extends CI_Controller {
 	public function export_detail_kegiatan($id) {
 		$list_kegiatan = $this->db->get_where('list_kegiatan', ['jenis_kegiatan_id' => $id])->result_array();
 		$jenis_kegiatan = $this->db->get_where('jenis_kegiatan', ['id' => $id])->row_array();
-		
+
 		if ($jenis_kegiatan) {
 			$this->load->view('home/export', [
 				'list_kegiatan'  => $list_kegiatan,
 				'jenis_kegiatan' => $jenis_kegiatan
 			]);
-		} else {	
+		} else {
 			show_404();
 		}
 	}
