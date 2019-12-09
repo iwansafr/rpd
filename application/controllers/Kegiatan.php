@@ -25,9 +25,8 @@ class Kegiatan extends CI_Controller {
 	}
 
 	public function store() {
-		$this->db->insert('jenis_kegiatan', [
-				'title'       => htmlspecialchars($this->input->post('title')),
-				'description' => htmlspecialchars($this->input->post('description'))
+		$this->db->insert('anggaran', [
+				'title'       => htmlspecialchars($this->input->post('title'))
 		]);
 
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil ditambah!</div>');
@@ -35,7 +34,7 @@ class Kegiatan extends CI_Controller {
 	}
 
 	public function edit($id) {
-		$kegiatan = $this->db->get_where('jenis_kegiatan', ['id' => $id])->row_array();
+		$kegiatan = $this->db->get_where('anggaran', ['id' => $id])->row_array();
 
 		if ($kegiatan) {
 			$this->load->view('templates/header', ['title' => 'Edit : '.$kegiatan['title']]);
@@ -48,11 +47,6 @@ class Kegiatan extends CI_Controller {
 
 	public function destroy($id) {
 		$jenis_kegiatan = $this->db->get_where('jenis_kegiatan', ['id' => $id])->row_array();
-		$list_kegiatan  = $this->db->get_where('list_kegiatan', ['jenis_kegiatan_id' => $jenis_kegiatan['id']])->result_array();
-
-		foreach($list_kegiatan as $item) {
-			$this->db->delete('list_kegiatan', ['id' => $item['id']]);
-		}
 
 		$this->db->delete('jenis_kegiatan', ['id' => $id]);
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil dihapus!</div>');
@@ -61,9 +55,8 @@ class Kegiatan extends CI_Controller {
 
 	public function update($id) {
 		$this->db->where('id', $id);
-		$this->db->update('jenis_kegiatan', [
-			'title'       => htmlspecialchars($this->input->post('title')),
-			'description' => htmlspecialchars($this->input->post('description'))
+		$this->db->update('anggaran', [
+			'title'       => htmlspecialchars($this->input->post('title'))
 		]);
 
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil diubah!</div>');

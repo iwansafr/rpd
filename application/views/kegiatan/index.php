@@ -1,12 +1,11 @@
 <div class="content-wrapper">
   <section class="content-header">
     <h1>
-      Kegiatan
-      <small>List data kegiatan</small>
+      Anggaran
     </h1>
     <ol class="breadcrumb">
       <li><a href="<?php echo base_url('home'); ?>"><i class="fa fa-dashboard"></i> Beranda</a></li>
-      <li class="active">Here</li>
+      <li class="active">Anngaran</li>
     </ol>
   </section>
 
@@ -15,7 +14,7 @@
     <div class="box">
       <div class="box-header">
         <a class="btn btn-primary" href="<?php echo base_url('kegiatan/create'); ?>">
-          <i class="fa fa-plus"></i>
+          <i class="fa fa-plus"></i> Tambah anggaran
         </a>
 
       <div class="box-body">
