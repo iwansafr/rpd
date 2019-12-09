@@ -22,8 +22,7 @@
           <thead>
           <tr>
             <th>NO</th>
-            <th>EDIT</th>
-            <th>HAPUS</th>
+            <th>ACTION</th>
             <th>DETAIL</th>
             <th>JUDUL</th>
             <th>JUMLAH</th>
@@ -32,19 +31,17 @@
           <tbody>
           <?php $i = 1; ?>
           <?php foreach($data as $key) : ?>
-            <?php $detail_kegiatan = $this->db->get_where('detail_kegiatan', ['jenis_kegiatan_id' => $key['id']])->row_array(); ?>
             <tr>
               <td><?php echo $i++; ?></td>
               <td>
-                <a href="<?php echo base_url('kegiatan/'.$key['id'].'/edit'); ?>" class="btn btn-primary">
-                  <i class="fa fa-edit"></i>
-                </a>
-              </td>
-
-              <td>
-                <a onclick="return window.confirm('Mau dihapus?')" href="<?php echo base_url('kegiatan/'.$key['id'].'/destroy'); ?>" class="btn btn-danger">
-                  <i class="fa fa-trash"></i>
-                </a>
+                <div class="input-group">
+                  <a href="<?php echo base_url('kegiatan/'.$key['id'].'/edit'); ?>" class="btn btn-primary">
+                    <i class="fa fa-edit"></i>
+                  </a>
+                  <a onclick="return window.confirm('Mau dihapus?')" href="<?php echo base_url('kegiatan/'.$key['id'].'/destroy'); ?>" class="btn btn-danger">
+                    <i class="fa fa-trash"></i>
+                  </a>
+                </div>
               </td>
 
               <td>
@@ -65,8 +62,7 @@
           <tfoot>
           <tr>
             <th>NO</th>
-            <th>EDIT</th>
-            <th>HAPUS</th>
+            <th>ACTION</th>
             <th>DETAIL</th>
             <th>JUDUL</th>
             <th>JUMLAH</th>

@@ -27,11 +27,38 @@
           <li><a href="<?php echo base_url('kegiatan/create'); ?>"><i class="fa fa-circle-o"></i> Tambah kegiatan</a></li>
         </ul>
       </li>
-      <li>
-        <a href="<?php echo base_url('pemasukan'); ?>"><i class="fa fa-bar-chart"></i> <span>Pemasukan</span></a>
+      <li class="treeview">
+        <a href="javascript:void(0)"><i class="fa fa-bar-chart"></i> <span>Pemasukan</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo base_url('pemasukan'); ?>"><i class="fa fa-circle-o"></i> List pemasukan</a></li>
+          <li><a href="<?php echo base_url('pemasukan/create'); ?>"><i class="fa fa-circle-o"></i> Tambah pemasukan</a></li>
+        </ul>
       </li>
-      <li>
-        <a href="<?php echo base_url('pengeluaran'); ?>"><i class="fa fa-bar-chart"></i> <span>Pengeluaran</span></a>
+      <li class="treeview">
+        <a href="javascript:void(0)"><i class="fa fa-bar-chart"></i> <span>Pengeluaran</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo base_url('pengeluaran'); ?>"><i class="fa fa-circle-o"></i> List pengeluaran</a></li>
+          <li><a href="<?php echo base_url('pengeluaran/create'); ?>"><i class="fa fa-circle-o"></i> Tambah pemasukan</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0)"><i class="fa fa-archive"></i> <span>Material</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo base_url('material'); ?>"><i class="fa fa-circle-o"></i> List material</a></li>
+          <li><a href="<?php echo base_url('material/create'); ?>"><i class="fa fa-circle-o"></i> Tambah material</a></li>
+        </ul>
       </li>
     </ul>
   </section>

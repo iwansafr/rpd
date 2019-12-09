@@ -9,6 +9,7 @@ class Pemasukan extends CI_Controller
 		{
 			redirect('login');
 		}
+		$this->load->model('Anggaran');
 	}
 
 	public function index()
@@ -20,8 +21,9 @@ class Pemasukan extends CI_Controller
 
 	public function create()
 	{
+		$anggaran = $this->Anggaran->order_by('id', 'desc')->all();
 		$this->load->view('templates/header', ['title' => 'Tambah data pemasukan']);
-		$this->load->view('pemasukan/create');
+		$this->load->view('pemasukan/create', ['anggaran' => $anggaran]);
 		$this->load->view('templates/footer');
 	}
 }

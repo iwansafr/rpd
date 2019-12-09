@@ -7,11 +7,11 @@ class Kegiatan extends CI_Controller {
 			redirect('login');
 		}
 		$this->load->library('form_validation');
+		$this->load->model('Anggaran');
 	}
 
 	public function index() {
-		$this->db->order_by('id', 'desc');
-		$data = $this->db->get('anggaran')->result_array();
+		$data = $this->Anggaran->order_by('id', 'desc')->all();
 
 		$this->load->view('templates/header', ['title' => 'List data kegiatan']);
 		$this->load->view('kegiatan/index', ['data' => $data]);
@@ -25,8 +25,8 @@ class Kegiatan extends CI_Controller {
 	}
 
 	public function store() {
-		$this->db->insert('anggaran', [
-				'title'       => htmlspecialchars($this->input->post('title'))
+		$this->Anggaran->store([
+				'title' => htmlspecialchars($this->input->post('title'))
 		]);
 
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil ditambah!</div>');
@@ -34,7 +34,7 @@ class Kegiatan extends CI_Controller {
 	}
 
 	public function edit($id) {
-		$kegiatan = $this->db->get_where('anggaran', ['id' => $id])->row_array();
+		$kegiatan = $this->Anggaran->where('id', $id)->single();
 
 		if ($kegiatan) {
 			$this->load->view('templates/header', ['title' => 'Edit : '.$kegiatan['title']]);
@@ -46,17 +46,16 @@ class Kegiatan extends CI_Controller {
 	}
 
 	public function destroy($id) {
-		$jenis_kegiatan = $this->db->get_where('jenis_kegiatan', ['id' => $id])->row_array();
+		$kegiatan = $this->Anggaran->where('id', $id)->single();
 
-		$this->db->delete('jenis_kegiatan', ['id' => $id]);
+		$this->Anggaran->delete(['id' => $id]);
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil dihapus!</div>');
 		redirect($this->agent->referrer());
 	}
 
 	public function update($id) {
-		$this->db->where('id', $id);
-		$this->db->update('anggaran', [
-			'title'       => htmlspecialchars($this->input->post('title'))
+		$this->Anggaran->where('id', $id)->update('anggaran', [
+			'title' => htmlspecialchars($this->input->post('title'))
 		]);
 
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil diubah!</div>');
@@ -64,7 +63,7 @@ class Kegiatan extends CI_Controller {
 	}
 
 	public function detail($id) {
-		$jenis_kegiatan = $this->db->get_where('jenis_kegiatan', ['id' => $id])->row_array();
+		$jenis_kegiatan = $this->Anggaran->where('id', $id)->single();
 		if ($jenis_kegiatan) {
 			$this->load->view('templates/header', ['title' => $jenis_kegiatan['title']]);
 			$this->load->view('home/detail', ['jenis_kegiatan' => $jenis_kegiatan]);

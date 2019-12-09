@@ -28,9 +28,6 @@
 .table-wrapper {
 	overflow-x: auto;
 }
-table .btn {
-	margin: 10px 10px 10px 0;
-}
 .alert {
 	display: block;
 	margin: 0;
@@ -63,4 +60,14 @@ table .btn {
 }
 tr, td, th {
 	border: 1px splid #88888 !important;
+}
+
+.input-group .btn:nth-child(1) {
+	border-top-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+
+.input-group .btn:nth-child(2) {
+	border-top-left-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
 }
