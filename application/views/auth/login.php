@@ -1,3 +1,4 @@
+<?php $logo = $this->Contents->where('slug', 'logo')->single(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,9 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="javascript:void(0)">RPD</a>
+    <a href="javascript:void(0)">
+      <img src="<?php echo base_url('assets/site/logo/'.$logo['file']); ?>" alt="site logo" style="width: 100px;">
+    </a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">

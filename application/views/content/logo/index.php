@@ -21,7 +21,13 @@
 
           <div class="box-body">
             <form action="<?php echo base_url('content/logo_update/'); ?>" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="title">Title tag</label>
+                <input type="text" name="title" class="form-control" value="<?php echo $data['title']; ?>" required>
+              </div>
+
               <div class="form-group input-photo">
+                <b style="font-size: 15px">File</b>
                 <label for="file">
                   <i class="fa fa-image"></i>
                   <img src="" alt="file input">
@@ -33,8 +39,8 @@
 
             <div class="box-footer">
               <button class="btn btn-success">
-                <i class="fa fa-upload"></i>
-                <span>Upload</span>
+                <i class="fa fa-save"></i>
+                <span>Simpan</span>
               </button>
               <a href="<?php echo $this->agent->referrer(); ?>" class="btn btn-default">
                 <i class="fa fa-arrow-circle-right"></i>
