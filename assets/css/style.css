@@ -71,3 +71,35 @@ tr, td, th {
 	border-top-left-radius: 0px !important;
 	border-bottom-left-radius: 0px !important;
 }
+
+.input-photo label {
+	display: flex;
+	width: 250px;
+	height: 190px;
+	border-radius: 5px;
+	border: 1px solid rgba(0,0,0,.2);
+	background: #eee;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	box-shadow: inset 0 -1.6px 3px .4px rgba(255,255,255,.4);
+	position: relative;
+	overflow: hidden;
+}
+
+.input-photo img {
+	display: none;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+}
+
+.input-photo .fa {
+	font-size: 40px;
+	color: #888888;
+}
+
+.input-photo input {
+	display: none;
+}

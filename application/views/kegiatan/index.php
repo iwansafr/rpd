@@ -14,7 +14,10 @@
     <div class="box">
       <div class="box-header">
         <a class="btn btn-primary" href="<?php echo base_url('kegiatan/create'); ?>">
-          <i class="fa fa-plus"></i> Tambah anggaran
+          <i class="fa fa-plus"></i> Tambah
+        </a>
+        <a class="btn btn-default" href="<?php echo base_url('kegiatan/excel'); ?>">
+          <i class="fa fa-file-excel-o"></i> Ekspor
         </a>
 
       <div class="box-body">

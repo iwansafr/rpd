@@ -14,7 +14,7 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN MENU</li>
       <li>
-        <a href="<?php echo base_url('home'); ?>"><i class="fa fa-home"></i> <span>Beranda</span></a>
+        <a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i> <span>Beranda</span></a>
       </li>
       <li class="treeview">
         <a href="javascript:void(0)"><i class="fa fa-wrench"></i> <span>Kegiatan</span>
@@ -58,6 +58,18 @@
         <ul class="treeview-menu">
           <li><a href="<?php echo base_url('material'); ?>"><i class="fa fa-circle-o"></i> List material</a></li>
           <li><a href="<?php echo base_url('material/create'); ?>"><i class="fa fa-circle-o"></i> Tambah material</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0)"><i class="fa fa-cogs"></i> <span>App setting</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <a href="<?php echo base_url('content/logo'); ?>"><i class="fa fa-circle-o"></i> Logo setting</a>
+          </li>
         </ul>
       </li>
     </ul>

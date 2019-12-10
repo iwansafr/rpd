@@ -1,9 +1,14 @@
-<?php $user = $this->db->get_where('users', ['id' => $this->session->userdata['user_id']])->row_array(); ?>
+<?php $user = $this->User->logged_in(); ?>
+<?php $logo = $this->Contents->where('slug', 'logo')->single(); ?>
 <header class="main-header">
   <!-- Logo -->
   <a href="<?php echo base_url('home'); ?>" class="logo">
-    <span class="logo-mini">RPD</span>
-    <span class="logo-lg">RPD</span>
+    <span class="logo-mini">
+      <img src="<?php echo base_url('assets/site/logo/'.$logo['file']); ?>" alt="site logo" style="width: 40px;">
+    </span>
+    <span class="logo-lg">
+      <img src="<?php echo base_url('assets/site/logo/'.$logo['file']); ?>" alt="site logo" style="width: 60px;">
+    </span>
   </a>
 
   <!-- Header Navbar -->
