@@ -5,7 +5,7 @@
 <title><?php echo $data['title'].' - '.$title; ?></title>
 <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-<link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/dataTables.min.css">
+<link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/datatables.min.css">
 <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/AdminLTE.min.css">
 <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/skins/skin-blue.min.css">

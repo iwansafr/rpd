@@ -17,5 +17,14 @@ $route['list/(:any)/edit'] = 'listbahan/edit/$1';
 $route['list/(:any)/update'] = 'listbahan/update/$1';
 $route['list/create'] = 'listbahan/create';
 $route['list/store'] = 'listbahan/store';
+
+$route['kategori/(:any)/edit'] = 'kategori/edit/$1';
+$route['kategori/(:any)/delete'] = 'kategori/delete/$1';
+$route['kategori/(:any)/update'] = 'kategori/update/$1';
+
+$route['pemasukan/(:any)/edit'] = 'pemasukan/edit/$1';
+$route['pemasukan/(:any)/delete'] = 'pemasukan/delete/$1';
+$route['pemasukan/(:any)/update'] = 'pemasukan/update/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

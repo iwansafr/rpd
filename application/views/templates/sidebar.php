@@ -50,14 +50,14 @@
         </ul>
       </li>
       <li class="treeview">
-        <a href="javascript:void(0)"><i class="fa fa-archive"></i> <span>Material</span>
+        <a href="javascript:void(0)"><i class="fa fa-archive"></i> <span>Kategori</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="<?php echo base_url('material'); ?>"><i class="fa fa-circle-o"></i> List material</a></li>
-          <li><a href="<?php echo base_url('material/create'); ?>"><i class="fa fa-circle-o"></i> Tambah material</a></li>
+          <li><a href="<?php echo base_url('kategori'); ?>"><i class="fa fa-circle-o"></i> List kategori</a></li>
+          <li><a href="<?php echo base_url('kategori/create'); ?>"><i class="fa fa-circle-o"></i> Tambah kategori</a></li>
         </ul>
       </li>
       <li class="treeview">

@@ -7,14 +7,17 @@ class Home extends CI_Controller {
 		if (!$this->session->has_userdata('user_id')) {
 			redirect('login');
 		}
-		$this->load->model('Anggaran');
+		$this->load->model(['Anggaran', 'Kategori_model', 'Pemasukan_model']);
 	}
 
 	public function index() {
 		$kegiatan = $this->Anggaran->all();
+		$saldo = $this->Pemasukan_model->saldo();
+		$pemasukan = $this->Pemasukan_model->pemasukan();
+		$kategori = $this->Kategori_model->total();
 
 		$this->load->view('templates/header', ['title' => 'Welcome user!']);
-		$this->load->view('home/index', ['kegiatan' => $kegiatan]);
+		$this->load->view('home/index', ['kegiatan' => $kegiatan, 'kategori' => $kategori, 'saldo' => $saldo, 'pemasukan' => $pemasukan]);
 		$this->load->view('templates/footer');
 	}
 

@@ -1,12 +1,12 @@
 <div class="content-wrapper">
   <section class="content-header">
     <h1>
-      Tambah data pemasukan
+      Edit data pemasukan
     </h1>
     <ol class="breadcrumb">
       <li><a href="<?php echo base_url('home'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="<?php echo base_url('pemasukan'); ?>">Pemasukan</a></li>
-      <li class="active">Create</li>
+      <li class="active">Edit</li>
     </ol>
   </section>
 
@@ -17,14 +17,14 @@
       <div class="col-md-6">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Input data</h3>
+            <h3 class="box-title">Edit data</h3>
           </div>
 
-          <form role="form" action="<?php echo base_url('pemasukan/store'); ?>" method="POST">
+          <form role="form" action="<?php echo base_url('pemasukan/'.$data['id'].'/update'); ?>" method="POST">
             <div class="box-body">
               <div class="form-group">
                 <label for="title">Judul</label>
-                <input type="text" name="title" id="title" class="form-control" required>
+                <input type="text" name="title" id="title" class="form-control" value="<?php echo $data['title']; ?>" required>
               </div>
               <div class="form-group">
                 <label for="description">Keterangan</label>
@@ -34,17 +34,17 @@
                 <label for="kategori">Kategori</label>
                 <select name="kategori" id="kategori" class="form-control">
                   <?php foreach($kategori as $key) : ?>
-                    <option value="<?php echo $key['id']; ?>"><?php echo $key['title']; ?></option>
+                    <option value="<?php echo $key['id']; ?>" <?php echo $data['kategori'] == $key['id'] ? 'selected' : ''; ?>><?php echo $key['title']; ?></option>
                   <?php endforeach; ?>
                 </select>
               </div>
               <div class="form-group">
                 <label for="jumlah">Jumlah</label>
-                <input type="text" name="jumlah" id="jumlah" class="form-control" required>
+                <input type="text" name="jumlah" id="jumlah" class="form-control" value="<?php echo $data['jumlah']; ?>" required>
               </div>
               <div class="form-group">
                 <label for="tanggal">Tanggal</label>
-                <input type="text" name="tanggal" class="form-control datepicker" id="tanggal" required>
+                <input type="text" name="tanggal" class="form-control datepicker" value="<?php echo date('d/m/Y', strtotime($data['tanggal'])) ?>" id="tanggal" required>
               </div>
             </div>
 

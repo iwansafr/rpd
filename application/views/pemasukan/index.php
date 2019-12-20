@@ -10,6 +10,8 @@
   </section>
 
   <section class="content container-fluid">
+  <?php echo $this->session->flashdata('message'); ?>
+
   <div class="row">
     <div class="col-xs-12">
       <div class="box">
@@ -35,40 +37,36 @@
         <div class="box-body table-responsive no-padding">
           <table class="table table-hover">
             <tr>
-              <th>ID</th>
-              <th>User</th>
-              <th>Date</th>
-              <th>Status</th>
-              <th>Reason</th>
+              <th style="width: 10px;">No</th>
+              <th>Aksi</th>
+              <th>Judul</th>
+              <th>Keterangan</th>
+              <th>Kategori</th>
+              <th>Tanggal</th>
+              <th>Jumlah</th>
             </tr>
+            <?php $i = 1; ?>
+            <?php foreach($data as $key) : ?>
+            <?php $kategori = $this->Kategori_model->find($key['kategori']); ?>
             <tr>
-              <td>183</td>
-              <td>John Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-success">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+              <td><?php echo $i++; ?>.</td>
+              <td>
+                <div class="btn-group">
+                  <a href="<?php echo base_url('pemasukan/'.$key['id'].'/edit'); ?>" class="btn btn-primary">
+                    <i class="fa fa-edit"></i>
+                  </a>
+                  <a onclick="return window.confirm('Yakin mau dihapus?');" href="<?php echo base_url('pemasukan/'.$key['id'].'/delete'); ?>" class="btn btn-danger">
+                    <i class="fa fa-trash"></i>
+                  </a>
+                </div>
+              </td>
+              <td><?php echo $key['title']; ?></td>
+              <td><?php echo $key['description'] != '' ? $key['description'] : 'Tidak ada Keterangan'; ?></td>
+              <td><?php echo $kategori['title']; ?></td>
+              <td><?php echo date('d M Y', strtotime($key['tanggal'])); ?></td>
+              <td><?php echo number_format($key['jumlah'], 2, ',', '.'); ?></td>
             </tr>
-            <tr>
-              <td>219</td>
-              <td>Alexander Pierce</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-warning">Pending</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr>
-              <td>657</td>
-              <td>Bob Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-primary">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr>
-              <td>175</td>
-              <td>Mike Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-danger">Denied</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
+            <?php endforeach; ?>
           </table>
         </div>
         <!-- /.box-body -->

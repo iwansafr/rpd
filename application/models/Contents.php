@@ -2,7 +2,7 @@
 
 class Contents extends CI_Model
 {
-	private $table = 'Content';
+	private $table = 'content';
 
 	public function store($data)
 	{

@@ -23,3 +23,5 @@ function previewImage() {
 		image.show();
 	}
 }
+
+new rupiahFormat('#jumlah').getValue();
