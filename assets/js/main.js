@@ -24,4 +24,52 @@ function previewImage() {
 	}
 }
 
-new rupiahFormat('#jumlah').getValue();
+$('#add_saldo').on('click', function(e) {
+	e.preventDefault();
+	const href = $(this).attr('href');
+	const checked = $('input:checked');
+	const tr = checked.parents('tr');
+	var data = [];
+
+	tr.css('background', '#eeeeee');
+
+	for (var i = 0; i < checked.length; i++) {
+		data.push($(checked[i]).attr('data-id'));
+	}
+	window.location.href = href + '/' + data.join('-');
+});
+
+$(document).ready(function() {
+	$('.type-data').hide();
+
+	$('.' + $('input[type="radio"]:checked').attr('id')).show();
+
+	$('input[type="radio"]').on('click', e => {
+		$('.type-data').hide();
+		const data = $('input[type="radio"]:checked').attr('id');
+		$('.'+data).show();
+	});
+});
+
+const nilaiValue = () => {
+	var value, element,
+			nilai = $('#nilai');
+	if ($('.pemasukan-data').css('display') == 'block') {
+		element = $('.pemasukan-data .form-group').children('.nilai');
+	} else if ($('.input-manual').css('display') == 'block') {
+		element = $('.input-manual .form-group').children('.nilai');
+	}
+
+	if ($(element).attr('id') == 'pemasukan') {
+		value = $(element).children('option:selected').val();
+	} else {
+		value = $(element).val();
+	}
+	nilai.val(value);
+};
+
+$(document).on('click', () => {
+	nilaiValue();
+});
+
+// new rupiahFormat('#jumlah').getValue();

@@ -8,14 +8,15 @@
       <li class="active">Dashboard</li>
     </ol>
   </section>
+
   <section class="content container-fluid">
     <div class="row">
         <div class="col-lg-3 col-xs-6">
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3 style="font-size: 25px;">Rp <?php echo number_format($saldo, 2, ',', '.'); ?></h3>
+              <h3 style="font-size: 25px;font-weight: normal;">Rp <?php echo number_format($saldo, 2, ',', '.'); ?></h3>
 
-              <p>Saldo</p>
+              <b style="font-size: 18px;">SALDO</b>
             </div>
             <div class="icon">
               <i class="fa fa-money"></i>
@@ -29,7 +30,7 @@
             <div class="inner">
               <h3 style="font-size: 25px;">Rp <?php echo number_format($pemasukan, 2, ',', '.'); ?></h3>
 
-              <p>Pemasukan</p>
+              <p>PEMASUKAN</p>
             </div>
             <div class="icon">
               <i class="fa fa-bar-chart"></i>
@@ -41,9 +42,9 @@
         <div class="col-lg-3 col-xs-6">
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>0</h3>
+              <h3 style="font-size: 25px;">Rp <?php echo number_format($pemasukan, 2, ',', '.'); ?></h3>
 
-              <p>Pengeluaran</p>
+              <p>PENGELUARAN</p>
             </div>
             <div class="icon">
               <i class="fa fa-bar-chart"></i>
@@ -56,7 +57,7 @@
             <div class="inner">
               <h3><?php echo $kategori; ?></h3>
 
-              <p>Kategori</p>
+              <p>KATEGORI</p>
             </div>
             <div class="icon">
               <i class="fa fa-bar-chart"></i>

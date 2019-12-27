@@ -115,3 +115,15 @@ tr, td, th {
 	left: 0;
 	width: 100%;
 }
+
+.time-saldo {
+	font-weight: bold;
+	font-size: 12px;
+	margin-top: 5px;
+	padding: 4px 10px;
+}
+
+.time-saldo option {
+	font-weight: bold;
+	padding: 4px 10px;
+}

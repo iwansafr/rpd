@@ -27,13 +27,6 @@
                 <label for="nama">Nama kategori</label>
                 <input type="text" class="form-control" id="nama" name="title" required>
               </div>
-              <div class="form-group">
-                <label for="jenis">Jenis</label>
-                <select id="jenis" name="type" class="form-control" required>
-                  <option value="1">Pemasukan</option>
-                  <option value="2">Pengeluaran</option>
-                </select>
-              </div>
             </div>
 
             <div class="box-footer">

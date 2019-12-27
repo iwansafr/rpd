@@ -66,7 +66,9 @@ class Pemasukan_model extends CI_model
 		$amount = 0;
 
 		foreach($data as $key) {
-			$amount += $key['jumlah'];
+			if ($key['saldo'] == 1) {
+				$amount += $key['jumlah'];
+			}
 		}
 
 		return $amount;

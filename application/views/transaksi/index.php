@@ -22,6 +22,9 @@
           <a href="<?php echo base_url('pemasukan/excel'); ?>" class="btn btn-default">
             <i class="fa fa-file-excel-o"></i> <span>Ekspor</span>
           </a>
+          <a href="<?php echo base_url('pemasukan/add_saldo'); ?>" class="btn btn-success" id="add_saldo">
+            <i class="fa fa-money"></i> <span>Tambahkan ke saldo</span>
+          </a>
 
           <div class="box-tools">
             <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
@@ -38,7 +41,9 @@
           <table class="table table-hover">
             <tr>
               <th style="width: 10px;">No</th>
+              <th>#</th>
               <th>Aksi</th>
+              <th>Saldo</th>
               <th>Judul</th>
               <th>Keterangan</th>
               <th>Kategori</th>
@@ -51,6 +56,9 @@
             <tr>
               <td><?php echo $i++; ?>.</td>
               <td>
+                <input type="checkbox" name="checklist" <?php echo $key['saldo'] == 1 ? 'checked="true"' : ''; ?> class="checklist" data-id="<?php echo $key['id']; ?>">
+              </td>
+              <td>
                 <div class="btn-group">
                   <a href="<?php echo base_url('pemasukan/'.$key['id'].'/edit'); ?>" class="btn btn-primary">
                     <i class="fa fa-edit"></i>
@@ -59,6 +67,17 @@
                     <i class="fa fa-trash"></i>
                   </a>
                 </div>
+              </td>
+              <td>
+                <?php if ($key['saldo'] == 1) : ?>
+                  <span class="badge bg-green">
+                    Aktif
+                  </span>
+                <?php else : ?>
+                  <span class="badge bg-yellow">
+                    Belum dipakai
+                  </span>
+                <?php endif; ?>
               </td>
               <td><?php echo $key['title']; ?></td>
               <td><?php echo $key['description'] != '' ? $key['description'] : 'Tidak ada Keterangan'; ?></td>

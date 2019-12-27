@@ -29,7 +29,6 @@
                 <th style="width: 10px">No</th>
                 <th>Aksi</th>
                 <th>Nama</th>
-                <th>Jenis</th>
               </tr>
               <?php $i = 1; ?>
               <?php foreach($data as $key) : ?>
@@ -46,7 +45,6 @@
                   </div>
                 </td>
                 <td><?php echo $key['title']; ?></td>
-                <td><?php echo $key['type'] == 1 ? 'Pemasukan' : 'Pengeluaran'; ?></td>
               </tr>
               <?php endforeach; ?>
             </table>

@@ -9,12 +9,14 @@ class Pengeluaran extends CI_Controller
 		{
 			redirect('login');
 		}
+		$this->load->model(['Pengeluaran_model', 'Kategori_model']);
 	}
 	
 	public function index()
 	{
+		$data = $this->Pengeluaran_model->desc();
 		$this->load->view('templates/header', ['title' => 'Total pengeluaran']);
-		$this->load->view('pengeluaran/index');
+		$this->load->view('pengeluaran/index', ['data' => $data]);
 		$this->load->view('templates/footer');
 	}
 }

@@ -3,15 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'home';
 $route['home'] = 'Home/index';
-$route['kegiatan/(:any)/destroy'] = 'kegiatan/destroy/$1';
-$route['kegiatan/(:any)/detail'] = 'kegiatan/detail/$1';
-$route['kegiatan/(:any)/edit'] = 'kegiatan/edit/$1';
-$route['kegiatan/(:any)/update'] = 'kegiatan/update/$1';
 $route['login'] = 'auth/index';
 $route['logout'] = 'auth/logout';
 $route['export_detail_kegiatan/(:any)'] = 'home/export_detail_kegiatan/$1';
 $route['export_excel'] = 'home/export';
-$route['kegiatan/(:any)/update'] = 'kegiatan/update/$1';
 $route['list/(:any)/destroy'] = 'listbahan/destroy/$1';
 $route['list/(:any)/edit'] = 'listbahan/edit/$1';
 $route['list/(:any)/update'] = 'listbahan/update/$1';
@@ -22,9 +17,13 @@ $route['kategori/(:any)/edit'] = 'kategori/edit/$1';
 $route['kategori/(:any)/delete'] = 'kategori/delete/$1';
 $route['kategori/(:any)/update'] = 'kategori/update/$1';
 
-$route['pemasukan/(:any)/edit'] = 'pemasukan/edit/$1';
-$route['pemasukan/(:any)/delete'] = 'pemasukan/delete/$1';
-$route['pemasukan/(:any)/update'] = 'pemasukan/update/$1';
+$route['transaksi/(:any)/edit'] = 'transaksi/edit/$1';
+$route['transaksi/(:any)/delete'] = 'transaksi/delete/$1';
+$route['transaksi/(:any)/update'] = 'transaksi/update/$1';
+
+$route['users/(:any)/edit'] = 'users/edit/$1';
+$route['users/(:any)/delete'] = 'users/delete/$1';
+$route['users/(:any)/update'] = 'users/update/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

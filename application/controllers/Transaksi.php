@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pemasukan extends CI_Controller
+class Transaksi extends CI_Controller
 {
 	public function __construct()
 	{
@@ -16,7 +16,7 @@ class Pemasukan extends CI_Controller
 	{
 		$data = $this->Pemasukan_model->desc();
 		$this->load->view('templates/header', ['title' => 'Total pemasukan']);
-		$this->load->view('pemasukan/index', ['data' => $data]);
+		$this->load->view('transaksi/index', ['data' => $data]);
 		$this->load->view('templates/footer');
 	}
 
@@ -24,7 +24,7 @@ class Pemasukan extends CI_Controller
 	{
 		$kategori = $this->Kategori_model->desc();
 		$this->load->view('templates/header', ['title' => 'Tambah data pemasukan']);
-		$this->load->view('pemasukan/create', ['kategori' => $kategori]);
+		$this->load->view('transaksi/create', ['kategori' => $kategori]);
 		$this->load->view('templates/footer');
 	}
 
@@ -97,6 +97,17 @@ class Pemasukan extends CI_Controller
 		]);
 
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil diedit!</div>');
-		redirect('pemasukan');
+		redirect('transaksi');
+	}
+
+	public function add_saldo($params = 0)
+	{
+		$this->Pemasukan_model->update(['saldo' => 0]);
+		foreach(explode('-', $params) as $key => $value) {
+			$this->db->where('id', $value);
+			$this->db->update('pemasukan', ['saldo' => 1]);
+		}
+		$this->session->set_flashdata('message', '<div class="alert alert-success">Saldo berhasil ditambah!</div>');
+		redirect('transaksi');
 	}
 }

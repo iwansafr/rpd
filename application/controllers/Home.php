@@ -11,13 +11,12 @@ class Home extends CI_Controller {
 	}
 
 	public function index() {
-		$kegiatan = $this->Anggaran->all();
 		$saldo = $this->Pemasukan_model->saldo();
 		$pemasukan = $this->Pemasukan_model->pemasukan();
 		$kategori = $this->Kategori_model->total();
 
 		$this->load->view('templates/header', ['title' => 'Welcome user!']);
-		$this->load->view('home/index', ['kegiatan' => $kegiatan, 'kategori' => $kategori, 'saldo' => $saldo, 'pemasukan' => $pemasukan]);
+		$this->load->view('home/index', ['kategori' => $kategori, 'saldo' => $saldo, 'pemasukan' => $pemasukan]);
 		$this->load->view('templates/footer');
 	}
 
