@@ -42,6 +42,7 @@
 						<input type="password" name="password" id="password" class="form-control" placeholder="Masukkan password baru">
 					</div>
 					<button type="submit" class="btn btn-primary">Simpan</button>
+					<a href="<?php echo base_url('users'); ?>" class="btn btn-default">Kembali</a>
 				</form>
 			</div>
 		</div>

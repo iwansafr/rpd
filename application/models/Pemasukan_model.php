@@ -1,23 +1,24 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pemasukan_model extends CI_model
-{
+class Pemasukan_model extends CI_model {
 	private $table = 'pemasukan';
 	public $query;
 
-	public function __construct()
-	{
+	public function __construct() {
 		parent::__construct();
 	}
 
-	public function desc()
-	{
+	public function desc() {
 		$this->order_by('id', 'desc');
 		return $this->db->get($this->table)->result_array();
 	}
 
-	public function order_by($key, $value)
-	{
+	public function like($key, $value) {
+		$this->db->like($key, $value);
+		return $this;
+	}
+
+	public function order_by($key, $value) {
 		$this->db->order_by($key, $value);
 		return $this;
 	}
@@ -30,7 +31,7 @@ class Pemasukan_model extends CI_model
 
 	public function where($key, $value)
 	{
-		$this->db->order_by($key, $value);
+		$this->db->where($key, $value);
 		return $this;
 	}
 

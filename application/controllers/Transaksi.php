@@ -20,6 +20,15 @@ class Transaksi extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 
+	public function search()
+	{
+		$q = $this->input->get('q');
+		$data = $this->Pemasukan_model->like('title', $q)->get()->result();
+		$this->load->view('templates/header', ['title' => 'Total pemasukan']);
+		$this->load->view('transaksi/index', ['data' => $data]);
+		$this->load->view('templates/footer');
+	}
+
 	public function create()
 	{
 		$kategori = $this->Kategori_model->desc();
@@ -35,11 +44,13 @@ class Transaksi extends CI_Controller
 		$kategori = $this->input->post('kategori');
 		$tanggal = $this->tanggal($this->input->post('tanggal'));
 		$jumlah = implode('', explode('.', $this->input->post('jumlah')));
+		$type = $this->input->post('type');
 
 		$this->Pemasukan_model->store([
 			'title' => $title,
 			'description' => $description,
 			'kategori' => $kategori,
+			'type' => $type,
 			'tanggal' => $tanggal,
 			'jumlah' => $jumlah
 		]);
@@ -73,7 +84,7 @@ class Transaksi extends CI_Controller
 		if ($data)
 		{
 			$this->load->view('templates/header', ['title' => 'Edit pemasukan']);
-			$this->load->view('pemasukan/edit', ['data' => $data, 'kategori' => $kategori]);
+			$this->load->view('transaksi/edit', ['data' => $data, 'kategori' => $kategori]);
 			$this->load->view('templates/footer');
 		} else {
 			show_404();
@@ -87,11 +98,13 @@ class Transaksi extends CI_Controller
 		$kategori = $this->input->post('kategori');
 		$tanggal = $this->tanggal($this->input->post('tanggal'));
 		$jumlah = implode('', explode('.', $this->input->post('jumlah')));
+		$type = $this->input->post('type');
 
 		$this->Pemasukan_model->where('id', $id)->update([
 			'title' => $title,
 			'description' => $description,
 			'kategori' => $kategori,
+			'type' => $type,
 			'tanggal' => $tanggal,
 			'jumlah' => $jumlah
 		]);

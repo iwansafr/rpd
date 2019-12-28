@@ -7,7 +7,7 @@ class Home extends CI_Controller {
 		if (!$this->session->has_userdata('user_id')) {
 			redirect('login');
 		}
-		$this->load->model(['Anggaran', 'Kategori_model', 'Pemasukan_model']);
+		$this->load->model(['Kategori_model', 'Pemasukan_model']);
 	}
 
 	public function index() {
