@@ -1,3 +1,4 @@
+<?php $user = $this->User->logged_in(); ?>
 <div class="content-wrapper">
   <section class="content-header">
     <h1>
@@ -10,61 +11,6 @@
   </section>
 
   <section class="content container-fluid">
-    <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3 style="font-size: 25px;font-weight: normal;">Rp <?php echo number_format($saldo, 2, ',', '.'); ?></h3>
-
-              <b style="font-size: 18px;">SALDO</b>
-            </div>
-            <div class="icon">
-              <i class="fa fa-money"></i>
-            </div>
-            <a href="<?php echo base_url('kegiatan'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3 style="font-size: 25px;">Rp <?php echo number_format($pemasukan, 2, ',', '.'); ?></h3>
-
-              <p>PEMASUKAN</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-bar-chart"></i>
-            </div>
-            <a href="<?php echo base_url('pemasukan'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3 style="font-size: 25px;">Rp <?php echo number_format($pemasukan, 2, ',', '.'); ?></h3>
-
-              <p>PENGELUARAN</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-bar-chart"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3><?php echo $kategori; ?></h3>
-
-              <p>KATEGORI</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-bar-chart"></i>
-            </div>
-            <a href="<?php echo base_url('kategori'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-      </div>
+    <h1>Welcome <?php echo $user['username']; ?>!</h1>
   </section>
 </div>

@@ -75,62 +75,83 @@
         </div>
 
 			</div>
-			<div class="col-md-6">
-				<div class="box">
-					<div class="box-header">
-						<h2 class="box-title">Tambah saldo</h2>
-					</div>
-					<div class="box-body">
-						<form role="form" action="<?php echo base_url('saldo/store'); ?>" method="POST">
-							<div class="form-group">
-								<label for="title">Judul</label>
-								<input type="text" name="title" class="form-control" id="title" required>
-							</div>
-							<div class="form-group">
-								<label for="description">Keterangan</label>
-								<textarea name="description" class="form-control" id="description" required></textarea>
-							</div>
-							<div class="form-group">
-								<label style="display: block;">Type</label>
-								<input type="radio" name="type" id="data-pemasukan" checked="true" required> <label for="data-pemasukan">Data pemasukan</label>
-								<br>
-								<input type="radio" name="type" id="input-manual" required> <label for="input-manual">Input manual</label>
-							</div>
-							<div class="type">
-								<div class="type-data data-pemasukan" data-target="data-pemasukan">
-									<div class="form-group">
-										<label for="pemasukan">Pemasukan</label>
-										<select name="pemasukan" id="pemasukan" class="form-control nilai">
-											<?php foreach($pemasukan as $key) : ?>
-												<option value="<?php echo $key['id']; ?>"><?php echo number_format($key['jumlah'], 2, ',', '.'); ?></option>
-											<?php endforeach; ?>
-										</select>
-									</div>
+		</div>
+
+		<?php echo $this->session->flashdata('message'); ?>
+
+		<div class="box">
+			<div class="box-header with-border">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah-user">
+             	<i class="fa fa-plus"></i> Tambah saldo
+            </button>
+			</div>
+			<div class="box-body table-responsive no-padding">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th style="width: 10px">No</th>
+							<th>Aksi</th>
+							<th>Keterangan</th>
+							<th>Tanggal</th>
+							<th>Jumlah</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php $i = 1; ?>
+						<?php foreach($data as $key) : ?>
+						<tr>
+							<td><?php echo $i++; ?>.</td>
+							<td>
+								<div class="btn-group">
+									<a href="<?php echo base_url('saldo/'.$key['id'].'/edit'); ?>" class="btn btn-primary">
+										<i class="fa fa-edit"></i>
+									</a>
+									<a onclick="return window.confirm('Yakin mau dihapus?');" href="<?php echo base_url('saldo/'.$key['id'].'/delete'); ?>" class="btn btn-danger">
+										<i class="fa fa-trash"></i>
+									</a>
 								</div>
-								<div class="type-data input-manual" data-target="input-manual">
-									<div class="form-group">
-										<label for="jumlah">Jumlah</label>
-										<input type="text" name="jumlah" class="form-control nilai" required>
-									</div>
-									<div class="form-group">
-										<label for="keterangan-lanjut">Keterangan lanjut</label>
-										<textarea name="keterangan_lanjut" id="keterangan-lanjut" class="form-control"></textarea>
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<label>Nilai</label>
-								<input type="text" name="nilai" id="nilai" class="form-control" disabled="true" value="3.000.000">
-							</div>
-							<div class="form-group">
-								<label for="tanggal">Tanggal</label>
-								<input type="text" name="tanggal" class="form-control datepicker" id="tanggal" required autocomplete="off">
-							</div>
-							<button type="submit" class="btn btn-primary">Tambah</button>
-						</form>
-					</div>
-				</div>
+							</td>
+							<td><?php echo $key['description']; ?></td>
+							<td><?php echo date('d M Y', strtotime($key['tanggal'])); ?></td>
+							<td><?php echo number_format($key['jumlah'], 2, ',', '.'); ?></td>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</section>
+	<div class="modal fade" id="tambah-user">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Tambah saldo</h4>
+	      </div>
+	      <div class="modal-body">
+	        <form action="<?php echo base_url('saldo/store'); ?>" method="POST">
+	        	<div class="form-group">
+	        		<label for="description">Keterangan</label>
+	        		<textarea id="description" name="description" class="form-control" placeholder="Keterangan saldo" required></textarea>
+	        	</div>
+	        	<div class="form-group">
+	        		<label for="tanggal">Tanggal</label>
+	        		<input type="text" name="tanggal" id="tanggal" class="form-control datepicker" autocomplete="off" required>
+	        	</div>
+	        	<div class="form-group">
+	        		<label for="jumlah">Jumlah</label>
+	        		<input type="number" name="jumlah" class="form-control" id="jumlah" placeholder="Masukkan jumlah saldo" required>
+	        	</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Simpan</button>
+	        </form>
+	      </div>
+	    </div>
+	    <!-- /.modal-content -->
+	  </div>
+	  <!-- /.modal-dialog -->
+	</div>
 </div>

@@ -25,5 +25,9 @@ $route['users/(:any)/edit'] = 'users/edit/$1';
 $route['users/(:any)/delete'] = 'users/delete/$1';
 $route['users/(:any)/update'] = 'users/update/$1';
 
+$route['saldo/(:any)/edit'] = 'saldo/edit/$1';
+$route['saldo/(:any)/delete'] = 'saldo/delete/$1';
+$route['saldo/(:any)/update'] = 'saldo/update/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
