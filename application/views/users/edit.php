@@ -41,8 +41,20 @@
 						<label for="password">New password?</label>
 						<input type="password" name="password" id="password" class="form-control" placeholder="Masukkan password baru">
 					</div>
-					<button type="submit" class="btn btn-primary">Simpan</button>
+					<div class="form-group">
+        		<label for="fullname">Nama lengkap</label>
+        		<input type="text" name="fullname" id="fullname" class="form-control" required placeholder="Nama lengkap" value="<?php echo $data['fullname']; ?>">
+        	</div>
+        	<div class="form-group">
+        		<label for="kecamatan">Kecamatan</label>
+        		<input type="text" name="kecamatan" id="kecamatan" class="form-control" required placeholder="Kecamatan" value="<?php echo $data['kecamatan']; ?>">
+        	</div>
+        	<div class="form-group">
+        		<label for="desa">Desa</label>
+        		<input type="text" name="desa" id="desa" class="form-control" required placeholder="Desa" value="<?php echo $data['desa']; ?>">
+        	</div>
 					<a href="<?php echo base_url('users'); ?>" class="btn btn-default">Kembali</a>
+					<button type="submit" class="btn btn-primary">Simpan</button>
 				</form>
 			</div>
 		</div>

@@ -140,7 +140,7 @@
         </a>
         <ul class="treeview-menu">
           <li>
-            <a href="">
+            <a href="<?php echo base_url('customers'); ?>">
               <i class="fa fa-circle-o"></i> Data pelanggan
             </a>
           </li>

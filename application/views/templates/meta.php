@@ -10,3 +10,5 @@
 <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/skins/skin-blue.min.css">
 <link rel="stylesheet" href="<?php echo base_url('assets/'); ?>css/style.css">
+
+<script src="<?php echo base_url('assets/'); ?>js/jquery.min.js"></script>

@@ -10,7 +10,7 @@
 	<section class="content container-fluid">
 		<?php echo $this->session->flashdata('message'); ?>
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-8">
 				<div class="box">
 					<div class="box-header">
 						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah-user">
@@ -26,7 +26,9 @@
 		            <?php endif; ?>
 		            <th>Username</th>
 		            <th>Akses</th>
-		            <th>Created at</th>
+		            <th>Nama lengkap</th>
+		            <th>Kecamatan</th>
+		            <th>Desa</th>
 		          </tr>
 		          <?php $i = 1; ?>
 		          <?php foreach($data as $key) : ?>
@@ -62,7 +64,9 @@
 		            		}
 		            	?>	
 		            </td>
-		            <td><?php echo date('d M Y', strtotime($key['created_at'])); ?></td>
+		            <td><?php echo $key['fullname']; ?></td>
+		            <td><?php echo $key['kecamatan']; ?></td>
+		            <td><?php echo $key['desa']; ?></td>
 		          </tr>
 		        	<?php endforeach; ?>
 		        </table>
@@ -86,6 +90,10 @@
 	        		<input type="text" name="username" class="form-control" id="username" required placeholder="Masukkan username">
 	        	</div>
 	        	<div class="form-group">
+	        		<label for="password">Password</label>
+	        		<input type="password" name="password" class="form-control" id="password" required placeholder="Masukkan password">
+	        	</div>
+	        	<div class="form-group">
 	        		<label for="role_id">Akses</label>
 	        		<select name="role_id" class="form-control" id="role_id" required>
 	        			<option>-pilih-</option>
@@ -97,8 +105,16 @@
 	        		</select>
 	        	</div>
 	        	<div class="form-group">
-	        		<label for="password">Password</label>
-	        		<input type="password" name="password" class="form-control" id="password" required placeholder="Masukkan password">
+	        		<label for="fullname">Nama lengkap</label>
+	        		<input type="text" name="fullname" id="fullname" class="form-control" required placeholder="Nama lengkap">
+	        	</div>
+	        	<div class="form-group">
+	        		<label for="kecamatan">Kecamatan</label>
+	        		<input type="text" name="kecamatan" id="kecamatan" class="form-control" required placeholder="Kecamatan">
+	        	</div>
+	        	<div class="form-group">
+	        		<label for="desa">Desa</label>
+	        		<input type="text" name="desa" id="desa" class="form-control" required placeholder="Desa">
 	        	</div>
 	      </div>
 	      <div class="modal-footer">
@@ -112,3 +128,4 @@
 	  <!-- /.modal-dialog -->
 	</div>
 </div>
+<script type="text/javascript" src="<?php echo base_url('assets/js/req_api.js'); ?>"></script>

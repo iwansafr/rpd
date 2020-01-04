@@ -17,10 +17,16 @@ class Users extends CI_Controller {
 		$username = htmlspecialchars($this->input->post('username'));
 		$role_id  = $this->input->post('role_id');
 		$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+		$fullname = htmlspecialchars($this->input->post('fullname'));
+		$kecamatan = htmlspecialchars($this->input->post('kecamatan'));
+		$desa = htmlspecialchars($this->input->post('desa'));
 
 		$this->User->store([
 			'username' => $username,
 			'role_id'  => $role_id,
+			'fullname' => $fullname,
+			'kecamatan' => $kecamatan,
+			'desa' => $desa,
 			'password' => $password
 		]);
 
@@ -59,19 +65,28 @@ class Users extends CI_Controller {
 
 	public function update($id) {
 		$username = htmlspecialchars($this->input->post('username'));
-		$role_id = $this->input->post('role_id');
+		$role_id  = $this->input->post('role_id');
 		$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+		$fullname = htmlspecialchars($this->input->post('fullname'));
+		$kecamatan = htmlspecialchars($this->input->post('kecamatan'));
+		$desa = htmlspecialchars($this->input->post('desa'));
 
 		if ($this->input->post('password') != '') {
 			$data = [
 				'username' => $username,
-				'role_id' => $role_id,
+				'role_id'  => $role_id,
+				'fullname' => $fullname,
+				'kecamatan' => $kecamatan,
+				'desa' => $desa,
 				'password' => $password
 			];
 		} else {
 			$data = [
 				'username' => $username,
-				'role_id' => $role_id
+				'role_id'  => $role_id,
+				'fullname' => $fullname,
+				'kecamatan' => $kecamatan,
+				'desa' => $desa
 			];
 		}
 

@@ -30,8 +30,8 @@
             </div>
 
             <div class="box-footer">
-              <button type="submit" class="btn btn-primary">Simpan</button>
               <a href="<?php echo base_url('kategori'); ?>" class="btn btn-default">Kembali</a>
+              <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
           </form>
         </div>

@@ -29,5 +29,9 @@ $route['saldo/(:any)/edit'] = 'saldo/edit/$1';
 $route['saldo/(:any)/delete'] = 'saldo/delete/$1';
 $route['saldo/(:any)/update'] = 'saldo/update/$1';
 
+$route['customers/(:any)/edit'] = 'customers/edit/$1';
+$route['customers/(:any)/destroy'] = 'customers/destroy/$1';
+$route['customers/(:any)/update'] = 'customers/update/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
