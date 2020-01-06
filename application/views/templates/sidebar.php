@@ -145,7 +145,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="<?php echo base_url('supplier'); ?>">
               <i class="fa fa-circle-o"></i> Data pemasok
             </a>
           </li>
