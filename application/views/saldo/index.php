@@ -82,8 +82,8 @@
 		<div class="box">
 			<div class="box-header with-border">
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah-user">
-             	<i class="fa fa-plus"></i> Tambah saldo
-            </button>
+					<i class="fa fa-plus"></i> Tambah saldo
+				</button>
 			</div>
 			<div class="box-body table-responsive no-padding">
 				<table class="table table-hover">

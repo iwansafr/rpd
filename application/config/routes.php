@@ -37,5 +37,9 @@ $route['supplier/(:any)/edit'] = 'supplier/edit/$1';
 $route['supplier/(:any)/destroy'] = 'supplier/destroy/$1';
 $route['supplier/(:any)/update'] = 'supplier/update/$1';
 
+$route['goods/(:any)/edit'] = 'goods/edit/$1';
+$route['goods/(:any)/destroy'] = 'goods/destroy/$1';
+$route['goods/(:any)/update'] = 'goods/update/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
